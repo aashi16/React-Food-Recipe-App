@@ -43,8 +43,17 @@ function App() {
             <span className="underline-text">{underlineText}</span>
           </h2>
         </div>
-        {/* {!searched && <div className="banner-image"></div>} */}
-        <Meal items={items} />
+        {items.map((item) => (
+          <Meal
+            key={item.idMeal}
+            idMeal={item.idMeal}
+            strMeal={item.strMeal}
+            strMealThumb={item.strMealThumb}
+            strInstructions={item.strInstructions}
+            strArea={item.strArea}
+            strCategory={item.strCategory}
+          />
+        ))}
       </section>
     </main>
   );
